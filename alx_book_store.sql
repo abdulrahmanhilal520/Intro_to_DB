@@ -22,8 +22,9 @@ address TEXT
 
 CREATE TABLE Orders(
 order_id INT PRIMARY KEY,
-customer_id INT REFERENCES Customers(customer_id),
-order_date DATE
+customer_id INT,
+order_date DATE,
+CONSTRAINT FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 CREATE TABLE Order_Details(
