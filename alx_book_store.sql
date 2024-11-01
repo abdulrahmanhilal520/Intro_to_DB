@@ -29,7 +29,9 @@ CONSTRAINT FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 
 CREATE TABLE Order_Details(
 orderdetailid INT PRIMARY KEY,
-order_id INT REFERENCES order_id(order_id),
-book_id INT REFERENCES Books(book_id),
-quantity DOUBLE
+order_id INT,
+book_id INT ,
+quantity DOUBLE,
+FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
