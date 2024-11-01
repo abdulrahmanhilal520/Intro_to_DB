@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import MySQLdb
+import mysql.connector
 
 def create_database():
     try:
-        MyDB = MySQLdb.connect(
+        MyDB = mysql.connect(
             host="localhost",
             user="root",
             passwd="@Abdo.01283908329abdo",
@@ -15,7 +15,7 @@ def create_database():
         
         print("Database 'alx_book_store' created successfully!")
         
-    except MySQLdb.Error as e:
+    except mysql.Error as e:
         print(f"Error: {e}")
         
     finally:
